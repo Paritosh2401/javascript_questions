@@ -1,0 +1,156 @@
+//1.Given two strings, return true if they are anagrams of one another
+
+//For example: Mary is an anagram of Army
+
+function check(str1,str2){
+    var check=0;
+    if(str1.length==str2.length){
+        for(i=0;i<str1.length;i++){
+            for(j=0;j<str1.length;j++){
+            if(str1[i]==str2[j]){check=1}
+                else{check=0;}
+                
+            }}}
+    else{check=0;}
+    if(check==1){console.log("true")
+                }
+    else{console.log("false")}
+}
+
+
+undefined
+check("mary","army");
+VM538:15 true
+undefined
+
+
+----------------------------------------------------------------------------------------------------------------
+
+
+//2. Write a function calculate that takes three arugments from the user, say num1 , num2, and operation(1==add, 2==subtract, 
+//     3==multiply, 4==divide ).Don`t use switch statement or if else statements
+     
+//     1.add,
+//     2.subtract,
+//     3.multiply,
+//     4.divide 
+    
+//     write the calc function for all the operations
+
+
+function calculate(){
+    var num1=parseInt(prompt('Enter 1st number'));
+    var num2=parseInt(prompt('Enter 2nd Number'));
+    var op=parseInt(prompt('Enter operation to be performed 1=add, 2=sub,3=multiply,4=divide'));
+    function add(){
+        return num1+num2;
+    }
+    function sub(){
+        return num1-num2;
+    }
+    function multiply(){
+        return num1*num2;
+    }
+    function divide(){
+        return num1/num2
+    }
+    var obj={1:add(),2:sub(),3:multiply(),4:divide()};
+    return obj[op];
+}
+
+
+undefined
+
+----------------------------------------------------------------------------------------------------------
+
+
+// 3. Create a function Named Triangle which takes 3 parameters, say A, B and C denoting the 3 sides of a triangle.
+// Use Callback function, create a method to check if the triangle is Equilateral or not.
+
+
+// Output:
+// "true" if the triangle is equilateral and "false" if its not.
+
+
+function check(a,b,c,fn) {
+    fn(a,b,c);   
+}
+
+function equiCheck(a,b,c) {
+    a = parseInt(a);
+    b = parseInt(b);
+    c = parseInt(c);
+    if (a == b && b == c) {
+        console.log("It is an equilateral triangle");
+    }
+    else {
+        console.log("Not an equilateral triangle");
+    }
+}
+
+
+var a = prompt("Enter first side of triangle");
+var b = prompt("Enter second side of triangle");
+var c = prompt("Enter third side of triangle");
+undefined
+
+-------------------------------------------------------------------------------------------------------------
+
+//4.Create a function Employee, having id, name, basic_Salary as arguments.
+
+//Compute HRA, DA, TA, GS, NS.
+
+//HRA is 30% of Basic Salary.
+//DA is 10% of Basic Salary.
+//TA is 20% of Basic Salary.
+
+//GS = Basic Salary + HRA + DA + TA;
+
+//TAX DEDUCTION is 10% of GS.
+
+//NS = GS - TAX DEDUCTION.
+
+//NOte : Use Basic Salary in Lexical Scope 
+//Print salary slip of the employee.
+//Compute HRA, DA, TA, GS, NS.*/
+function employee(n='',s=0) {
+    var h=0.30*s;
+    var d=0.10*s;
+    var t=0.20*s;
+    var g=s+h+d+t;
+    var nus=g-(0.10*g);
+    console.log(n +": hra = "+h+', ds ='+d+',ta='+t+',gs='+g+',ns='+nus);
+}
+undefined
+employee('deepak',200);
+VM728:24 deepak: hra = 60, ds =20,ta=40,gs=320,ns=288
+undefined
+
+
+-------------------------------------------------------------------------------------------------
+
+
+// 5. Write a function to find the maximum and minimum elements in an array.
+// arr = [10,3,15,-1,9,6]
+
+// output = maxno. : 15
+// 		 minno. : -1
+
+
+function findMaxMin(arr) {
+    var max = arr[0];
+    var min = arr[0];
+    for (var ele of arr) {
+        if (ele > max) {
+            max = ele;
+        }
+        if (ele < min) {
+            min = ele;
+        }
+    }
+    return {"max":max , "min":min};
+}
+
+undefined
+findMaxMin([13,32,25,-98,5,61]);
+{max: 61, min: -98}
